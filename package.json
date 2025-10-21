@@ -1,0 +1,20 @@
+{
+  "name": "ai-trading-academy",
+  "version": "1.0.0",
+  "description": "AI-powered trading courses platform with synthetic intelligence",
+  "main": "backend/app.py",
+  "scripts": {
+    "start": "python backend/app.py",
+    "dev": "FLASK_ENV=development python backend/app.py",
+    "build": "echo 'Building AI Trading Academy...'"
+  },
+  "keywords": [
+    "ai",
+    "trading",
+    "courses",
+    "synthetic-intelligence",
+    "ecommerce"
+  ],
+  "author": "AI Trading Academy",
+  "license": "MIT"
+}
