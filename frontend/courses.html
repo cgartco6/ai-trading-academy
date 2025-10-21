@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Courses - AI Trading Academy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-robot"></i> AI Trading Academy
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="courses.html">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#ai-agents">AI Agents</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#about">About</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <a href="cart.html" class="btn btn-outline-light me-2">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count badge bg-danger">0</span>
+                    </a>
+                    <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Courses Header -->
+    <section class="courses-header bg-primary text-white py-5" style="margin-top: 76px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h1 class="display-5 fw-bold">AI-Generated Trading Courses</h1>
+                    <p class="lead">Learn from our synthetic intelligence that continuously evolves and updates course content</p>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card bg-dark text-white">
+                        <div class="card-body">
+                            <h6><i class="fas fa-sync-alt me-2"></i>Auto-Updated</h6>
+                            <small>All courses updated monthly by AI agents</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Filter -->
+    <section class="py-4 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="d-flex flex-wrap gap-2">
+                        <button class="btn btn-outline-primary active" data-filter="all">All Courses</button>
+                        <button class="btn btn-outline-primary" data-filter="beginner">Beginner</button>
+                        <button class="btn btn-outline-primary" data-filter="intermediate">Intermediate</button>
+                        <button class="btn btn-outline-primary" data-filter="advanced">Advanced</button>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search courses..." id="courseSearch">
+                        <button class="btn btn-primary" type="button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Grid -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row" id="courses-grid">
+                <!-- Courses will be loaded dynamically -->
+            </div>
+            
+            <!-- Upcoming Courses -->
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="card bg-warning text-dark">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-md-8">
+                                    <h4 class="card-title">
+                                        <i class="fas fa-calendar-plus me-2"></i>
+                                        New Course Coming Next Month!
+                                    </h4>
+                                    <p class="card-text">
+                                        Our AI agents are currently developing the next evolution in trading education. 
+                                        Stay tuned for "Quantum Trading Algorithms with AI" - launching in 30 days.
+                                    </p>
+                                </div>
+                                <div class="col-md-4 text-end">
+                                    <div class="countdown">
+                                        <div class="countdown-item">
+                                            <span class="countdown-number" id="days">30</span>
+                                            <span class="countdown-label">Days</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Benefits Section -->
+    <section class="py-5 bg-dark text-white">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Why Learn from AI?</h2>
+                <p class="lead">Our synthetic intelligence provides unique advantages</p>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="text-center">
+                        <i class="fas fa-bolt fa-3x text-warning mb-3"></i>
+                        <h5>Real-time Updates</h5>
+                        <p>Course content updates automatically based on market changes and new strategies</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="text-center">
+                        <i class="fas fa-chart-line fa-3x text-warning mb-3"></i>
+                        <h5>Live Market Analysis</h5>
+                        <p>AI agents analyze current market conditions to provide relevant examples</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="text-center">
+                        <i class="fas fa-graduation-cap fa-3x text-warning mb-3"></i>
+                        <h5>Personalized Learning</h5>
+                        <p>AI adapts content based on your progress and learning style</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5><i class="fas fa-robot"></i> AI Trading Academy</h5>
+                    <p>Revolutionizing trading education through artificial intelligence.</p>
+                </div>
+                <div class="col-md-3">
+                    <h6>Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="courses.html" class="text-white-50">Courses</a></li>
+                        <li><a href="#" class="text-white-50">About Us</a></li>
+                        <li><a href="#" class="text-white-50">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h6>Payment Methods</h6>
+                    <div class="payment-methods">
+                        <i class="fab fa-cc-stripe fa-2x me-2"></i>
+                        <span class="text-white-50">PayFast</span>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <small>&copy; 2024 AI Trading Academy. All rights reserved.</small>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Login to AI Trading Academy</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Password</label>
+                            <input type="password" class="form-control" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/courses.js"></script>
+</body>
+  </html>
