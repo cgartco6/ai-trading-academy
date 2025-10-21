@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Details - AI Trading Academy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-robot"></i> AI Trading Academy
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="courses.html">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#ai-agents">AI Agents</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#about">About</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <a href="cart.html" class="btn btn-outline-light me-2">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count badge bg-danger">0</span>
+                    </a>
+                    <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Course Header -->
+    <section class="course-header py-5" style="margin-top: 76px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="breadcrumb-item"><a href="courses.html">Courses</a></li>
+                            <li class="breadcrumb-item active" id="course-level">Course Level</li>
+                        </ol>
+                    </nav>
+                    
+                    <span class="badge bg-warning mb-3" id="course-level-badge">Level</span>
+                    <h1 class="display-5 fw-bold mb-3" id="course-title">Course Title</h1>
+                    <p class="lead mb-4" id="course-description">Course description will be loaded here</p>
+                    
+                    <div class="d-flex flex-wrap gap-3 align-items-center mb-4">
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-clock text-primary me-2"></i>
+                            <span id="course-duration">Duration</span>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-book-open text-primary me-2"></i>
+                            <span id="course-lessons">Lessons</span>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-sync-alt text-primary me-2"></i>
+                            <span id="course-updated">Last Updated</span>
+                        </div>
+                    </div>
+
+                    <div class="ai-generated-badge">
+                        <i class="fas fa-robot me-2"></i>
+                        <span>AI-Generated Content | Version: <span id="content-version">1.0.0</span></span>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="card course-purchase-card">
+                        <div class="card-body">
+                            <div class="text-center mb-4">
+                                <h3 class="price-tag" id="course-price">R0</h3>
+                                <small class="text-muted">One-time payment • Lifetime access</small>
+                            </div>
+                            
+                            <button class="btn btn-primary w-100 mb-3" onclick="addToCart(currentCourseId)">
+                                <i class="fas fa-cart-plus me-2"></i>Add to Cart
+                            </button>
+                            <button class="btn btn-outline-primary w-100" onclick="buyNow(currentCourseId)">
+                                <i class="fas fa-bolt me-2"></i>Buy Now
+                            </button>
+                            
+                            <hr>
+                            
+                            <div class="features-list">
+                                <h6>What's Included:</h6>
+                                <ul class="list-unstyled" id="course-features">
+                                    <!-- Features will be loaded here -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Content -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="card">
+                        <div class="card-header">
+                            <ul class="nav nav-tabs card-header-tabs" id="courseTabs">
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-bs-toggle="tab" href="#curriculum">Curriculum</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-bs-toggle="tab" href="#instructors">AI Instructors</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-bs-toggle="tab" href="#reviews">Reviews</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-body">
+                            <div class="tab-content">
+                                <!-- Curriculum Tab -->
+                                <div class="tab-pane fade show active" id="curriculum">
+                                    <h5 class="mb-4">Course Curriculum</h5>
+                                    <div class="accordion" id="curriculumAccordion">
+                                        <!-- Curriculum will be loaded dynamically -->
+                                    </div>
+                                </div>
+                                
+                                <!-- AI Instructors Tab -->
+                                <div class="tab-pane fade" id="instructors">
+                                    <h5 class="mb-4">Your AI Instructors</h5>
+                                    <div class="row" id="ai-instructors">
+                                        <!-- AI instructors will be loaded here -->
+                                    </div>
+                                </div>
+                                
+                                <!-- Reviews Tab -->
+                                <div class="tab-pane fade" id="reviews">
+                                    <h5 class="mb-4">Student Reviews</h5>
+                                    <div id="course-reviews">
+                                        <!-- Reviews will be loaded here -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <!-- AI Benefits Card -->
+                    <div class="card mb-4">
+                        <div class="card-header bg-primary text-white">
+                            <h6 class="mb-0"><i class="fas fa-star me-2"></i>AI-Powered Benefits</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex mb-3">
+                                <i class="fas fa-sync-alt text-primary me-3 mt-1"></i>
+                                <div>
+                                    <h6 class="mb-1">Auto-Updating Content</h6>
+                                    <small class="text-muted">Course updates monthly with new strategies</small>
+                                </div>
+                            </div>
+                            <div class="d-flex mb-3">
+                                <i class="fas fa-chart-line text-primary me-3 mt-1"></i>
+                                <div>
+                                    <h6 class="mb-1">Live Market Analysis</h6>
+                                    <small class="text-muted">Real-time examples from current markets</small>
+                                </div>
+                            </div>
+                            <div class="d-flex">
+                                <i class="fas fa-graduation-cap text-primary me-3 mt-1"></i>
+                                <div>
+                                    <h6 class="mb-1">Personalized Learning</h6>
+                                    <small class="text-muted">AI adapts to your learning style</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Next Course Card -->
+                    <div class="card bg-warning">
+                        <div class="card-body">
+                            <h6><i class="fas fa-rocket me-2"></i>Ready for the Next Level?</h6>
+                            <p class="small mb-3">Complete this course to unlock the next level in your trading journey.</p>
+                            <a href="courses.html" class="btn btn-dark btn-sm">View All Courses</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Courses -->
+    <section class="py-5">
+        <div class="container">
+            <h3 class="text-center mb-5">Related Courses</h3>
+            <div class="row" id="related-courses">
+                <!-- Related courses will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5><i class="fas fa-robot"></i> AI Trading Academy</h5>
+                    <p>Revolutionizing trading education through artificial intelligence.</p>
+                </div>
+                <div class="col-md-3">
+                    <h6>Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="courses.html" class="text-white-50">Courses</a></li>
+                        <li><a href="#" class="text-white-50">About Us</a></li>
+                        <li><a href="#" class="text-white-50">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h6>Payment Methods</h6>
+                    <div class="payment-methods">
+                        <i class="fab fa-cc-stripe fa-2x me-2"></i>
+                        <span class="text-white-50">PayFast</span>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <small>&copy; 2024 AI Trading Academy. All rights reserved.</small>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Login to AI Trading Academy</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Password</label>
+                            <input type="password" class="form-control" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/course-detail.js"></script>
+</body>
+  </html>
