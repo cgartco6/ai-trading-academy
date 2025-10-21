@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+        .header { background: linear-gradient(135deg, #27ae60, #2ecc71); color: white; padding: 30px; text-align: center; }
+        .content { background: #f9f9f9; padding: 30px; }
+        .update-section { background: white; padding: 20px; margin: 15px 0; border-radius: 5px; border-left: 4px solid #27ae60; }
+        .ai-agent { background: #f8f9fa; padding: 10px; margin: 10px 0; border-radius: 3px; }
+        .footer { background: #34495e; color: white; padding: 20px; text-align: center; font-size: 12px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔄 Course Updated!</h1>
+            <p>Your AI Trading Academy course has been enhanced</p>
+        </div>
+        
+        <div class="content">
+            <h2>Hello {{user_name}},</h2>
+            <p>Great news! Your course <strong>"{{course_title}}"</strong> has been automatically updated with new content and improvements by our AI agents.</p>
+            
+            <div class="update-section">
+                <h3>📈 What's New in Version {{new_version}}:</h3>
+                <ul>
+                    {% for update in updates %}
+                    <li>{{update}}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            
+            <div class="update-section">
+                <h3>🤖 AI Agents Involved:</h3>
+                {% for agent in ai_agents %}
+                <div class="ai-agent">
+                    <strong>{{agent.name}}</strong> (v{{agent.version}})<br>
+                    <em>{{agent.role}}</em><br>
+                    <small>{{agent.contribution}}</small>
+                </div>
+                {% endfor %}
+            </div>
+            
+            <div class="update-section">
+                <h3>🎯 New Trading Insights:</h3>
+                <p>Based on current market analysis, we've added:</p>
+                <ul>
+                    <li>Real-time market examples from the past week</li>
+                    <li>Updated trading strategies for current volatility</li>
+                    <li>New risk management techniques</li>
+                    <li>Enhanced AI trading algorithms</li>
+                </ul>
+            </div>
+            
+            <div style="background: #fff3cd; padding: 15px; border-radius: 5px; margin: 20px 0;">
+                <h4>💡 Pro Tip:</h4>
+                <p>Review the updated sections to stay current with the latest AI trading methodologies. Our systems analyze market conditions daily to ensure you're learning the most relevant strategies.</p>
+            </div>
+            
+            <p><strong>Access your updated course:</strong> <a href="{{course_url}}">Continue Learning</a></p>
+            
+            <p><em>Next scheduled update: {{next_update_date}}</em></p>
+        </div>
+        
+        <div class="footer">
+            <p>&copy; 2024 AI Trading Academy. All rights reserved.</p>
+            <p>This update was automatically generated and deployed by our AI system.</p>
+            <p>Your courses evolve as the markets do - that's the power of AI-driven education!</p>
+        </div>
+    </div>
+</body>
+</html>
