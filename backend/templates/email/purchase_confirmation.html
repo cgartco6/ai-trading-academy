@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+        .header { background: linear-gradient(135deg, #2c3e50, #34495e); color: white; padding: 30px; text-align: center; }
+        .content { background: #f9f9f9; padding: 30px; }
+        .course-item { background: white; padding: 15px; margin: 10px 0; border-radius: 5px; border-left: 4px solid #3498db; }
+        .footer { background: #34495e; color: white; padding: 20px; text-align: center; font-size: 12px; }
+        .ai-badge { background: #e74c3c; color: white; padding: 5px 10px; border-radius: 3px; font-size: 12px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎉 Welcome to AI Trading Academy!</h1>
+            <p>Your trading education journey begins now</p>
+        </div>
+        
+        <div class="content">
+            <h2>Purchase Confirmation</h2>
+            <p>Dear {{user_name}},</p>
+            <p>Thank you for your purchase! We're excited to have you join our community of AI-powered traders.</p>
+            
+            <h3>Your Courses:</h3>
+            {% for course in courses %}
+            <div class="course-item">
+                <h4>{{course.title}}</h4>
+                <p><strong>Level:</strong> {{course.level}} | <strong>Duration:</strong> {{course.duration}}</p>
+                <span class="ai-badge">🤖 AI-Generated Content</span>
+            </div>
+            {% endfor %}
+            
+            <h3>What's Next?</h3>
+            <ul>
+                <li>Access your courses immediately through your learning dashboard</li>
+                <li>All courses are automatically updated by our AI agents</li>
+                <li>You have lifetime access to purchased courses</li>
+                <li>New content is added monthly based on market conditions</li>
+            </ul>
+            
+            <div style="background: #e8f4fd; padding: 15px; border-radius: 5px; margin: 20px 0;">
+                <h4>🚀 AI-Powered Learning Features:</h4>
+                <ul>
+                    <li>Real-time market analysis integrated into lessons</li>
+                    <li>Automatically updated trading strategies</li>
+                    <li>Personalized learning path optimization</li>
+                    <li>AI trading assistants and simulators</li>
+                </ul>
+            </div>
+            
+            <p><strong>Total Paid:</strong> R{{total_amount}}</p>
+            <p><strong>Order ID:</strong> {{order_id}}</p>
+            <p><strong>Purchase Date:</strong> {{purchase_date}}</p>
+            
+            <p>Start learning now: <a href="{{dashboard_url}}">Access Your Dashboard</a></p>
+        </div>
+        
+        <div class="footer">
+            <p>&copy; 2024 AI Trading Academy. All rights reserved.</p>
+            <p>This email was generated automatically by our AI system.</p>
+            <p>Need help? Contact our AI support team at support@aitradingacademy.com</p>
+        </div>
+    </div>
+</body>
+</html>
